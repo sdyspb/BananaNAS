@@ -1,0 +1,26 @@
+/dts-v1/;
+/plugin/;
+/ {
+	fragment@0 {
+		target = <&pcie3x4>;
+		__overlay__ {
+			num-lanes = <2>;
+			vpcie3v3-supply = <&vcc3v3_pcie30>;
+			status = "okay";
+		};
+	};
+	fragment@1 {
+		target = <&pcie3x2>;
+		__overlay__ {
+			vpcie3v3-supply = <&vcc3v3_pcie30>;
+			status = "okay";
+		};
+	};
+	fragment@2 {
+		target = <&pcie30phy>;
+		__overlay__ {
+			rockchip,pcie30-phymode = <0>;
+			status = "okay";
+		};
+	};
+};
