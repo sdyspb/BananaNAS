@@ -1,8 +1,9 @@
 # BananaNAS
 
-Репозиторий содержит Device Tree overlay и скрипты кастомизации для сборки образа Armbian под портативное NAS-устройство BananaNAS.
+<img width="1280" height="960" alt="banananas" src="https://github.com/user-attachments/assets/29021e5f-8cc1-4892-ad87-e729fcdb4003" />
 
-BananaNAS построен на основе BananaPi BPI-M7 / Armsom Sige7 (Rockchip RK3588), оснащён двумя M.2 NVMe, двумя портами 2.5GbE и поддерживает OMV.
+
+Репозиторий содержит overlay и скрипты кастомизации для сборки образа Armbian под портативный NAS - BananaNAS на основе одноплатника BPI-M7 / Sige7, оснащён двумя M.2 NVMe, двумя портами 2.5GbE и поддерживает OMV.
 
 Device Tree Overlay `armsom-sige7-pcie-split.dts` обеспечивает работу двух дисков NVMe (разделение 4 линий PCIe на 2x2).
 
