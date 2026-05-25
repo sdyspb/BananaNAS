@@ -1,0 +1,27 @@
+#!/bin/bash
+# Custom Art logo MotD for server image
+
+export TERM=${TERM:-linux}
+
+# Armbian info
+if [ -f /etc/armbian-release ]; then
+	. /etc/armbian-release
+fi
+
+# Clear screen
+clear
+
+# Check toilet
+if command -v toilet &> /dev/null; then
+#    toilet -f standard -F metal "PixelNAS"
+    toilet -f standard -F metal "BananaNAS"
+else
+    echo "======================================="
+#    echo "      Welcome to PixelNAS Server"
+    echo "      Welcome to BananaNAS Server"
+    echo "======================================="
+fi
+
+# System info
+echo -e "\nWelcome to Armbian $VERSION $IMAGE_TYPE"
+printf "Kernel: \033[1;32m%s\033[0m\n" "$(uname -r)"
