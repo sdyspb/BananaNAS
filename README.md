@@ -3,20 +3,20 @@
 <img width="1280" height="960" alt="banananas" src="https://github.com/user-attachments/assets/29021e5f-8cc1-4892-ad87-e729fcdb4003" />
 
 
-Репозиторий содержит overlay и скрипты кастомизации для сборки образа Armbian под портативный NAS - BananaNAS на основе одноплатника BPI-M7 / Sige7, оснащён двумя M.2 NVMe, двумя портами 2.5GbE и поддерживает OMV.
+This repository contains an overlay and customization scripts for building an Armbian image for the portable NAS - BananaNAS based on the BPI-M7 / Sige7 single-board computer. It features two M.2 NVMe slots, two 2.5GbE ports, and supports OMV.
 
-Device Tree Overlay `armsom-sige7-pcie-split.dts` обеспечивает работу двух дисков NVMe (разделение 4 линий PCIe на 2x2).
+The Device Tree Overlay `armsom-sige7-pcie-split.dts` enables two NVMe drives (splits 4 PCIe lanes into 2x2).
 
-## Описание файлов
+## File descriptions
 
-| Файл | Назначение |
+| File | Description |
 | :--- | :--- |
-| `armsom-sige7-pcie-split.dts` | Разделяет 4 линии PCIe 3.0 на два порта по 2 линии для двух NVMe. |
-| `customize-image.sh` | Скрипт кастомизации, копирует overlay в сборку Armbian. |
+| `armsom-sige7-pcie-split.dts` | Splits 4 PCIe 3.0 lanes into two 2-lane ports for two NVMe drives. |
+| `customize-image.sh` | Customization script that copies the overlay into the Armbian build. |
 
-## Использование со сборочной системой Armbian
+## Usage with the Armbian build system
 
-Разместите файлы в `userpatches/`:
+Place the files in `userpatches/`:
 
 ```bash
 userpatches/
@@ -24,17 +24,23 @@ userpatches/
 └── overlay/
     ├── armsom-sige7-pcie-split.dts
 ```
+## Build examples
 
-## Сборка образа
+### Server Debian 13
 ```bash
 ./compile.sh build BOARD=bananapim7 BRANCH=vendor BUILD_DESKTOP=no BUILD_MINIMAL=no KERNEL_CONFIGURE=no RELEASE=trixie
 ```
-## Сборка образа с Openvediavault (OMV)
+### Server + OMV
 
-Сохраните omv.sh в userpatches/extensions/ и выполните:
+- place omv extension to /extensions
+- add ENABLE_EXTENSIONS=omv to directive and run:
+
 ```bash
 ./compile.sh build BOARD=bananapim7 BRANCH=vendor BUILD_DESKTOP=no BUILD_MINIMAL=no KERNEL_CONFIGURE=no RELEASE=trixie ENABLE_EXTENSIONS=omv
 ```
 
-## Лицензия
-GPL-2.0 (в соответствии с Armbian). Базовые исходные файлы DTS — из ядра Linux и проектов armsom-sige7 / bpi-m7
+## Resources
+https://pixelnas.com/
+
+## License
+GPL-2.0 (in accordance with Armbian). Base DTS source files are from the Linux kernel and the armsom-sige7 project.
