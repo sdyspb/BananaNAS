@@ -26,7 +26,7 @@ userpatches/
 ```
 ## Build examples
 
-### Server Debian 13
+### Server
 ```bash
 ./compile.sh build BOARD=bananapim7 BRANCH=vendor BUILD_DESKTOP=no BUILD_MINIMAL=no KERNEL_CONFIGURE=no RELEASE=trixie
 ```
