@@ -41,6 +41,7 @@ userpatches/
 
 ## Resources
 https://pixelnas.com/
+https://github.com/armbian/rkbin
 
 ## License
 GPL-2.0 (in accordance with Armbian). Base DTS source files are from the Linux kernel and the [armsom-sige7](https://www.armsom.org/sige7) project.
