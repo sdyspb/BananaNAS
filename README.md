@@ -3,7 +3,7 @@
 <img width="1280" height="960" alt="banananas" src="https://github.com/user-attachments/assets/29021e5f-8cc1-4892-ad87-e729fcdb4003" />
 
 
-This repository contains an overlay and customization scripts for building an Armbian image for the portable NAS - BananaNAS based on RK3588 single-board computer. It features two M.2 NVMe slots, two 2.5GbE ports, and supports OMV.
+This repository contains an overlay and customization scripts for building an Armbian image for the portable NAS - BananaNAS based on RK3588 single-board computer. It features two M.2 NVMe slots, two 2.5GbE ports and supports OMV.
 
 The Device Tree Overlay `armsom-sige7-pcie-split.dts` enables two NVMe drives (splits 4 PCIe lanes into 2x2).
 
